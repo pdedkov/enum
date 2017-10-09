@@ -164,6 +164,14 @@ class Base implements Iface {
 		return static::$_itemsToString;
 	}
 
+	public static function message($item) {
+		if (self::isValid($item)) {
+			return static::$_itemsToString[$item];
+		} else {
+			return $item;
+		}
+	}
+
 	/**
 	 * Получение данных элементов enum
 	 *
